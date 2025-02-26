@@ -81,16 +81,17 @@
   }
 }
 
-@layer utilities{
+@layer utilities {
   .profileCircleWraper {
-    @apply absolute top-1  from-bgdarklight100 to-bgdarklight200 w-[235px] h-[235px] sm:w-[405px] sm:h-[405px] rounded-full  ;
+    @apply absolute top-1 bg-gradient-to-r from-bgdarklight100 to-bgdarklight200 w-[235px] h-[235px] sm:w-[405px] sm:h-[405px] rounded-full;
   }
-  
+
   .profileCircleWraper::before {
-    @apply absolute content-[''] -inset-1 bg-conic bg-bgdarklight300 to-bgdarklight
-    w-full h-full rounded-full rotate-[190deg] opacity-50 animate-spin delay-700;
+    @apply absolute content-[''] -inset-1 bg-gradient-to-r from-bgdarklight300 to-bgdarklight w-full h-full rounded-full rotate-[190deg] opacity-50 animate-spin delay-700;
   }
+
   .profileCircleContent {
-    @apply absolute top-0 bg-radial-[at_25%_25%] from-bgdarklight100 to-bgdarklight300 w-[230px] h-[230px] sm:w-[400px] sm:h-[400px] rounded-[500]
+    @apply absolute top-0 w-[230px] h-[230px] sm:w-[400px] sm:h-[400px] rounded-[500];
+    background: radial-gradient(circle at 25% 25%, var(--color-bgdarklight100), var(--color-bgdarklight300));
   }
 }
