@@ -61,6 +61,11 @@
   main {
     @apply grid lg:grid-cols-2;
   }
+
+  .homemade-apple-regular {
+    font-family: var(--font-home-apple);
+    font-weight: normal;
+  }
 }
 
 @layer components {
