@@ -82,7 +82,8 @@
   }
 
   .homemade-apple-regular {
-    @apply font-home-apple font-normal ;
+    font-family: var(--font-home-apple);
+    font-weight: normal;
   }
 }
 
