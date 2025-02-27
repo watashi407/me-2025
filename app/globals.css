@@ -38,8 +38,6 @@
   }
 }
 
-/* @apply bg-[radial-gradient(circle,rgba(15,47,46,0.4),rgba(55,16,18,0.6)),url('/svg-bg-me.svg')] bg-cover bg-fixed; */
-
 @layer base {
   body,
   html {
@@ -49,7 +47,7 @@
     @apply text-3xl;
   }
   p {
-    @apply indent-6 font-mono text-sm;
+    @apply indent-6 text-sm;
   }
   button {
     @apply my-2 rounded-2xl bg-indigo-500 p-3 text-2xl text-stone-500 dark:text-white;
@@ -57,11 +55,6 @@
 
   main {
     @apply grid lg:grid-cols-2;
-  }
-
-  .homemade-apple-regular {
-    font-family: "Homemade Apple", serif;
-    font-weight: normal;
   }
 }
 
