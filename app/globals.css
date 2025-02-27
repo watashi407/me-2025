@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+@import "tailwindcss" important;
 @plugin "tailwindcss-motion";
 
 @theme {
@@ -8,45 +8,42 @@
   --breakpoint-3xl: 1920px;
   --color-bgdarklight: oklch(59.94% 0.0688 191.02);
   --color-bgdarklight100: oklch(46.64% 0.0688 191.02);
-  --color-bgdarklight200 : oklch(28.12% 0.0373 192.43);
-  --color-bgdarklight300 : oklch(24.13% 0.0299 195.36);
+  --color-bgdarklight200: oklch(28.12% 0.0373 192.43);
+  --color-bgdarklight300: oklch(24.13% 0.0299 195.36);
   --color-reddarklight: oklch(53.37% 0.1616 25.25);
   --color-reddarklight300: oklch(23.82% 0.0624 20.13);
   --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
   --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
 
-/* typing animation */
+  /* typing animation */
 
---animate-typing: typing 2s steps(20) infinite alternate, blink 0.9s infinite ;
-@keyframes typing {
-  0% {
-    width: 0;
-    visibility: hidden;
+  --animate-typing: typing 2s steps(20) infinite alternate, blink 0.9s infinite;
+  @keyframes typing {
+    0% {
+      width: 0;
+      visibility: hidden;
+    }
+    100% {
+      width: 100%;
+    }
   }
-  100% {
-    width: 100%;
-  }
-}
 
-@keyframes blink {
-  50% {
-    border-color: transparent;
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: currentColor;
+    }
   }
-  100% {
-    border-color: currentColor;
-  }
-}
-  
 }
 
 /* @apply bg-[radial-gradient(circle,rgba(15,47,46,0.4),rgba(55,16,18,0.6)),url('/svg-bg-me.svg')] bg-cover bg-fixed; */
-
 
 @layer base {
   body,
   html {
     @apply bg-[radial-gradient(circle,rgba(15,47,46,0.4),rgba(55,16,18,0.6)),url('/svg-bg-me.svg')] bg-cover bg-fixed;
-
   }
   h3 {
     @apply text-3xl;
@@ -57,47 +54,50 @@
   button {
     @apply my-2 rounded-2xl bg-indigo-500 p-3 text-2xl text-stone-500 dark:text-white;
   }
-  
+
   main {
     @apply grid lg:grid-cols-2;
   }
 
   .homemade-apple-regular {
-    font-family: 'Homemade Apple', serif;
+    font-family: "Homemade Apple", serif;
     font-weight: normal;
   }
 }
 
 @layer components {
-
   .card {
-    @apply m-7 space-x-7 rounded-2xl  p-5 text-2xl;
+    @apply m-7 space-x-7 rounded-2xl p-5 text-2xl;
   }
 
   .profile {
-    @apply flex flex-col items-center justify-center space-x-5 mt-[100px];
+    @apply mt-[100px] flex flex-col items-center justify-center space-x-5;
   }
   .profile img {
-    @apply max-sm:w-70 max-sm:h-70 -motion-translate-x-in-[87%] motion-translate-y-in-[1%] motion-duration-[1200ms] motion-ease-spring-bouncier ;
+    @apply max-sm:w-70 max-sm:h-70 -motion-translate-x-in-[87%] motion-translate-y-in-[1%] motion-duration-[1200ms] motion-ease-spring-bouncier;
   }
 
   .homemade-apple-regular {
-    font-family: 'Homemade Apple', serif;
+    font-family: "Homemade Apple", serif;
     font-weight: normal;
   }
 }
 
 @layer utilities {
   .profileCircleWraper {
-    @apply absolute top-1 bg-gradient-to-r from-bgdarklight100 to-bgdarklight200 w-[235px] h-[235px] sm:w-[405px] sm:h-[405px] rounded-full;
+    @apply from-bgdarklight100 to-bgdarklight200 absolute top-1 h-[235px] w-[235px] rounded-full bg-gradient-to-r sm:h-[405px] sm:w-[405px];
   }
 
   .profileCircleWraper::before {
-    @apply absolute content-[''] -inset-1 bg-gradient-to-r from-bgdarklight300 to-bgdarklight w-full h-full rounded-full rotate-[190deg] opacity-50 animate-spin delay-700;
+    @apply from-bgdarklight300 to-bgdarklight absolute -inset-1 h-full w-full rotate-[190deg] animate-spin rounded-full bg-gradient-to-r opacity-50 delay-700 content-[''];
   }
 
   .profileCircleContent {
-    @apply absolute top-0 w-[230px] h-[230px] sm:w-[400px] sm:h-[400px] rounded-[500];
-    background: radial-gradient(circle at 25% 25%, var(--color-bgdarklight100), var(--color-bgdarklight300));
+    @apply absolute top-0 h-[230px] w-[230px] rounded-[500] sm:h-[400px] sm:w-[400px];
+    background: radial-gradient(
+      circle at 25% 25%,
+      var(--color-bgdarklight100),
+      var(--color-bgdarklight300)
+    );
   }
 }
