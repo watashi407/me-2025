@@ -2,7 +2,7 @@ export default function OscillatingText() {
   const watashiStudio = "watashi".split(""); // Example text
 
   return (
-    <div className="homemade-apple-regular w-fit -rotate-12 text-orange-700 antialiased">
+    <div className="w-fit -rotate-12 text-orange-700 antialiased">
       <div className="animate-typing border-r-5 flex overflow-hidden whitespace-nowrap border-r-orange-700 py-2 pr-4 tracking-tight">
         {watashiStudio.map((letter, index) => (
           <span
